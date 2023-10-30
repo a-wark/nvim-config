@@ -98,6 +98,18 @@ return packer.startup(function(use)
 	-- git signs plugin
 	use("lewis6991/gitsigns.nvim")
 
+	-- harpoon
+	use("ThePrimeagen/harpoon")
+
+	-- edit remote files
+	use({
+		"chipsenkbeil/distant.nvim",
+		branch = "v0.3",
+		config = function()
+			require("distant"):setup()
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

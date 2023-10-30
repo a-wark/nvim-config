@@ -26,6 +26,9 @@ mason_lspconfig.setup({
 		"tailwindcss",
 		"lua_ls",
 		"emmet_ls",
+		"marksman",
+		"clangd",
+		"rust_analyzer",
 	},
 })
 
