@@ -1,3 +1,4 @@
+-- set leader key to space
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for consiceness
@@ -36,7 +37,7 @@ keymap.set("n", "<A-k>", ":m .-2<CR>==")
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+-- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
@@ -44,18 +45,3 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>")
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
-
--- harpoon
-keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
-keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
-keymap.set("n", "<A-t>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
-keymap.set("n", "<leader>hj", ":lua require('harpoon.ui').nav_file(1)<CR>")
-keymap.set("n", "<leader>hk", ":lua require('harpoon.ui').nav_file(2)<CR>")
-keymap.set("n", "<leader>hl", ":lua require('harpoon.ui').nav_file(3)<CR>")
-keymap.set("n", "<leader>h'", ":lua require('harpoon.ui').nav_file(4)<CR>")
-keymap.set("n", "<A-a>", ":lua require('harpoon.ui').nav_file(1)<CR>")
-keymap.set("n", "<A-s>", ":lua require('harpoon.ui').nav_file(2)<CR>")
-keymap.set("n", "<A-d>", ":lua require('harpoon.ui').nav_file(3)<CR>")
-keymap.set("n", "<A-f>", ":lua require('harpoon.ui').nav_file(4)<CR>")
-keymap.set("n", "<leader>hn", ":lua require('harpoon.ui').nav_next()<CR>")
-keymap.set("n", "<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>")
