@@ -143,9 +143,33 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure ocamllsp
     lspconfig["ocamllsp"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+
+    -- configure rust server
+    lspconfig["rust_analyzer"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        ["rust-analyzer"] = {
+          imports = {
+            granularity = {
+              group = "module",
+            },
+            prefix = "self",
+          },
+          cargo = {
+            buildScripts = {
+              enable = true,
+            },
+          },
+          procMacro = {
+            enable = true,
+          },
+        },
+      },
     })
 
     -- configure lua server (with special settings)
