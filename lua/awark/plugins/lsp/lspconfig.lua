@@ -147,6 +147,7 @@ return {
     lspconfig["ocamllsp"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+    })
 
     -- configure rust server
     lspconfig["rust_analyzer"].setup({
