@@ -12,6 +12,10 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
 
+-- replace currently selected text with default register
+-- without yanking it
+keymap.set("n", "<leader>p", '"_dP')
+
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
