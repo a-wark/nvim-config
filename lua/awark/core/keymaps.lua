@@ -14,7 +14,7 @@ keymap.set("n", "x", '"_x')
 
 -- replace currently selected text with default register
 -- without yanking it
-keymap.set("n", "<leader>p", '"_dP')
+keymap.set("n", "<leader>p", '"_dP"')
 
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
