@@ -34,6 +34,7 @@ return {
         ensure_installed = {
           "prettier",
           "stylua",
+          "codelldb",
         }
       })
     end,
