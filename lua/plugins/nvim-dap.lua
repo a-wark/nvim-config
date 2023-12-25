@@ -22,8 +22,8 @@ return {
           end
 
           local keymap = vim.keymap
-          keymap.set("n", "<leader>du", function() dap.toggle() end, { desc = "Dap UI" })
-          keymap.set({ "n", "v" }, "<leader>de", function() dap.eval() end, { desc = "Eval" })
+          keymap.set("n", "<leader>du", function() dapui.toggle() end, { desc = "Dap UI" })
+          keymap.set({ "n", "v" }, "<leader>de", function() dapui.eval() end, { desc = "Eval" })
         end
       },
       {
