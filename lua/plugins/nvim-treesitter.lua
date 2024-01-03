@@ -7,19 +7,7 @@ return {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = {
-          "c",
-          "lua",
-          "vim",
-          "javascript",
-          "typescript",
-          "html",
-          "rust",
-          "gitignore",
-          "css",
-          "http",
-          "sql"
-        },
+        auto_install = true, -- instead of ensure_installed
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = false },
@@ -31,5 +19,5 @@ return {
     -- event = "LazyFile",
     enabled = true,
     opts = { mode = "cursor", max_lines = 3 },
-  }
+  },
 }
