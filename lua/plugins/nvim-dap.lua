@@ -3,6 +3,9 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
       {
+        "williamboman/mason-lspconfig.nvim",
+      },
+      {
         "rcarriga/nvim-dap-ui",
         opts = {},
         config = function(_, opts)
