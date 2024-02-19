@@ -7,6 +7,11 @@ return {
   config = function()
     local harpoon = require("harpoon")
     harpoon:setup()
+    -- harpoon:setup({
+    --   settings = {
+    --     border_chars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    --   },
+    -- })
 
     local keymap = vim.keymap
     keymap.set("n", "<leader>ha", function()

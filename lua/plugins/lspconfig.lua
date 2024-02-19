@@ -6,6 +6,9 @@ local function on_attach(_, bufnr)
   opts.desc = "Restart LSP"
   keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
+  opts.desc = "Go to definition"
+  keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+
   opts.desc = "See available code actions"
   keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
@@ -101,16 +104,16 @@ return {
             globals = { "vim", "get_args" },
           },
           runtime = {
-            version = "LuaJIT"
+            version = "LuaJIT",
           },
           workspace = {
             checkThirdParty = false,
             library = {
-              vim.env.VIMRUNTIME
-            }
-          }
-        }
-      }
+              vim.env.VIMRUNTIME,
+            },
+          },
+        },
+      },
     })
 
     -- lspconfig.rust_analyzer.setup({
