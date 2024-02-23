@@ -13,9 +13,9 @@ return {
           icons = {
             package_installed = "✓",
             package_pending = "➜",
-            package_uninstalled = "✗"
-          }
-        }
+            package_uninstalled = "✗",
+          },
+        },
       })
 
       local mason_lspconfig = require("mason-lspconfig")
@@ -24,6 +24,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
+          "tsserver",
         },
         automatic_installation = true,
       })
@@ -35,8 +36,8 @@ return {
           "prettier",
           "stylua",
           "codelldb",
-        }
+        },
       })
     end,
-  }
+  },
 }

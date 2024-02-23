@@ -51,7 +51,7 @@ return {
     end
 
     -- local opts = { noremap = true, silent = true }
-    -- on_attach = function(_, bufnr)
+    -- local on_attach = function(_, bufnr)
     --   opts.buffer = bufnr
     --
     --   -- set keybinds
@@ -140,6 +140,11 @@ return {
     -- })
 
     lspconfig.ocamllsp.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["tsserver"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
