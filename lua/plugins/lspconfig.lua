@@ -6,6 +6,9 @@ local function on_attach(_, bufnr)
   opts.desc = "Restart LSP"
   keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
+  opts.desc = "Go to definition"
+  keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+
   opts.desc = "See available code actions"
   keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
@@ -48,7 +51,7 @@ return {
     end
 
     -- local opts = { noremap = true, silent = true }
-    -- on_attach = function(_, bufnr)
+    -- local on_attach = function(_, bufnr)
     --   opts.buffer = bufnr
     --
     --   -- set keybinds
@@ -101,16 +104,16 @@ return {
             globals = { "vim", "get_args" },
           },
           runtime = {
-            version = "LuaJIT"
+            version = "LuaJIT",
           },
           workspace = {
             checkThirdParty = false,
             library = {
-              vim.env.VIMRUNTIME
-            }
-          }
-        }
-      }
+              vim.env.VIMRUNTIME,
+            },
+          },
+        },
+      },
     })
 
     -- lspconfig.rust_analyzer.setup({
@@ -137,6 +140,11 @@ return {
     -- })
 
     lspconfig.ocamllsp.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig["tsserver"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

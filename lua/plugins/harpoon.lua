@@ -7,20 +7,51 @@ return {
   config = function()
     local harpoon = require("harpoon")
     harpoon:setup()
+    harpoon:setup({
+      settings = {
+        save_on_toggle = true,
+        --     border_chars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+      },
+    })
 
     local keymap = vim.keymap
-    keymap.set("n", "<leader>ha", function() harpoon:list():append() end, { desc = "Mark file with harpoon" })
-    keymap.set("n", "<leader>ht", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-      { desc = "Toggle harpoon menu" })
-    keymap.set("n", "<A-t>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
-      { desc = "Toggle harpoon menu" })
-    -- keymap.set("n", "<leader>hj", ":lua require('harpoon.ui').nav_file(1)<CR>")
-    -- keymap.set("n", "<leader>hk", ":lua require('harpoon.ui').nav_file(2)<CR>")
-    -- keymap.set("n", "<leader>hl", ":lua require('harpoon.ui').nav_file(3)<CR>")
-    -- keymap.set("n", "<leader>h'", ":lua require('harpoon.ui').nav_file(4)<CR>")
-    keymap.set("n", "<A-j>", function() harpoon:list():select(1) end)
-    keymap.set("n", "<A-k>", function() harpoon:list():select(2) end)
-    keymap.set("n", "<A-l>", function() harpoon:list():select(3) end)
-    keymap.set("n", "<A-'>", function() harpoon:list():select(4) end)
-  end
+    keymap.set("n", "<leader>ha", function()
+      harpoon:list():append()
+    end, { desc = "Mark file with harpoon" })
+    keymap.set("n", "<leader>ht", function()
+      harpoon.ui:toggle_quick_menu(harpoon:list())
+    end, { desc = "Toggle harpoon menu" })
+    -- keymap.set("n", "<A-t>", function()
+    --   harpoon.ui:toggle_quick_menu(harpoon:list())
+    -- end, { desc = "Toggle harpoon menu" })
+
+    -- these keybindings are comfortable for colemak layout
+    keymap.set("n", "<leader>hn", function()
+      harpoon:list():select(1)
+    end, { desc = "Select file 1" })
+    keymap.set("n", "<leader>he", function()
+      harpoon:list():select(2)
+    end, { desc = "Select file 2" })
+    keymap.set("n", "<leader>hi", function()
+      harpoon:list():select(3)
+    end, { desc = "Select file 3" })
+    keymap.set("n", "<leader>ho", function()
+      harpoon:list():select(4)
+    end, { desc = "Select file 4" })
+    keymap.set("n", "<leader>hm", function()
+      harpoon:list():select(5)
+    end, { desc = "Select file 5" })
+    -- keymap.set("n", "<A-j>", function()
+    --   harpoon:list():select(1)
+    -- end)
+    -- keymap.set("n", "<A-k>", function()
+    --   harpoon:list():select(2)
+    -- end)
+    -- keymap.set("n", "<A-l>", function()
+    --   harpoon:list():select(3)
+    -- end)
+    -- keymap.set("n", "<A-'>", function()
+    --   harpoon:list():select(4)
+    -- end)
+  end,
 }

@@ -31,6 +31,9 @@ return {
       opts.desc = "Smart rename"
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
+      opts.desc = "Go to definition"
+      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+
       opts.desc = "Show documentation for what is under cursor"
       keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
@@ -49,13 +52,17 @@ return {
       -- Hover actions
       keymap.set("n", "<leader>rh", rt.hover_actions.hover_actions, { buffer = bufnr, desc = "Hover actions" })
       -- Code action groups
-      keymap.set("n", "<leader>ra", rt.code_action_group.code_action_group,
-        { buffer = bufnr, desc = "Code action groups" })
+      keymap.set(
+        "n",
+        "<leader>ra",
+        rt.code_action_group.code_action_group,
+        { buffer = bufnr, desc = "Code action groups" }
+      )
     end
 
     rt.setup({
       dap = {
-        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path)
+        adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
       },
       server = {
         capabilities = capabilities,
@@ -97,8 +104,8 @@ return {
       tools = {
         hover_actions = {
           auto_focus = true,
-        }
-      }
+        },
+      },
     })
-  end
+  end,
 }

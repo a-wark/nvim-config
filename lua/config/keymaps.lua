@@ -16,5 +16,5 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- vim maximizer
 keymap.set("n", "<C-d>", "<C-d>zz") -- move half page down and center cursor
 keymap.set("n", "<C-u>", "<C-u>zz") -- move half page up and center cursor
 
-keymap.set("n", "<A-j>", ":m .+2<CR>==")
+keymap.set("n", "<A-j>", ":m .+1<CR>==")
 keymap.set("n", "<A-k>", ":m .-2<CR>==")
