@@ -14,10 +14,17 @@ return {
   -- 	end,
   -- },
 
+  -- {
+  --   "GlennLeo/cobalt2",
+  --   config = function()
+  --     vim.cmd.colorscheme("cobalt2")
+  --   end,
+  -- },
+
   {
     "cocopon/iceberg.vim",
     config = function()
-      vim.cmd.colorscheme "iceberg"
+      vim.cmd.colorscheme("iceberg")
     end,
     colors = {
       -- ! special
@@ -56,8 +63,8 @@ return {
       -- ! white
       -- *.color7:       #c6c8d1
       -- *.color15:      #d2d4de
-    }
-  }
+    },
+  },
 
   -- {
   --   "wadackel/vim-dogrun",
