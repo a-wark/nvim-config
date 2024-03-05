@@ -2,8 +2,6 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>")
 
-keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear search highlights
-
 keymap.set("n", "x", '"_x"') -- delete single character without copying into register
 keymap.set("n", "<leader>p", '"_dP"') -- replace currenly selected text with default register without yanking it
 
@@ -18,3 +16,12 @@ keymap.set("n", "<C-u>", "<C-u>zz") -- move half page up and center cursor
 
 keymap.set("n", "<A-j>", ":m .+1<CR>==")
 keymap.set("n", "<A-k>", ":m .-2<CR>==")
+
+keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear search highlights
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight on yank",
+  group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
