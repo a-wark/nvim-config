@@ -20,19 +20,35 @@ opt.smartcase = true
 -- cursor line
 opt.cursorline = true
 
--- appearance 
+-- appearance
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
--- backspace 
+-- backspace
 opt.backspace = "indent,eol,start"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
 
 -- split windows
---opt.splitright = true
---opt.splitbelow = true
+opt.splitright = true
+opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+-- mode is already displayed in status line
+opt.showmode = false
+
+-- display of whitespaces
+opt.list = true
+opt.listchars = {
+  tab = "» ",
+  extends = "⟩",
+  precedes = "⟨",
+  trail = "·",
+  nbsp = "␣",
+}
+
+-- minimal number of lines to keep above and below the cursor
+opt.scrolloff = 8
