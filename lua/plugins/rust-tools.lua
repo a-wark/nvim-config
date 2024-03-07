@@ -28,11 +28,20 @@ return {
       opts.desc = "See available code actions"
       keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-      opts.desc = "Smart rename"
-      keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
-      opts.desc = "Go to definition"
+      opts.desc = "[G]o to [D]efinition"
       keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+
+      opts.desc = "[G]o to [I]mplementation"
+      keymap.set("n", "gI", "<cmd>Telescope lsp_implementations<CR>", opts)
+
+      opts.desc = "[G]o to [R]eferences"
+      keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+
+      opts.desc = "See available [C]ode [A]ctions"
+      keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+
+      opts.desc = "Smart [R]e[N]ame"
+      keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
       opts.desc = "Show documentation for what is under cursor"
       keymap.set("n", "K", vim.lsp.buf.hover, opts)
