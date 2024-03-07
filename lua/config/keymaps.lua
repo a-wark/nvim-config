@@ -9,7 +9,7 @@ keymap.set("n", "<leader>ei", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>e,", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>ee", "<C-w>=") -- make split windows equal width
 keymap.set("n", "<leader>en", ":close<CR>") -- close current split window
-keymap.set("n", "<leader>eu", ":MaximizerToggle<CR>") -- vim maximizer
+-- keymap.set("n", "<leader>eu", ":MaximizerToggle<CR>") -- vim maximizer => is set in another file
 
 keymap.set("n", "<C-d>", "<C-d>zz") -- move half page down and center cursor
 keymap.set("n", "<C-u>", "<C-u>zz") -- move half page up and center cursor

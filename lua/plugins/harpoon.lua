@@ -6,7 +6,7 @@ return {
   branch = "harpoon2",
   config = function()
     local harpoon = require("harpoon")
-    harpoon:setup()
+    -- harpoon:setup()
     harpoon:setup({
       settings = {
         save_on_toggle = true,

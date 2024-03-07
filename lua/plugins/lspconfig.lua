@@ -36,6 +36,10 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    {
+      "j-hui/fidget.nvim",
+      opts = {},
+    },
   },
   config = function()
     local lspconfig = require("lspconfig")
