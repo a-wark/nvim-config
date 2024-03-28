@@ -25,6 +25,9 @@ return {
           "lua_ls",
           "rust_analyzer",
           "tsserver",
+          "pyright",
+          "html",
+          "cssls",
         },
         automatic_installation = true,
       })
@@ -36,6 +39,8 @@ return {
           "prettier",
           "stylua",
           "codelldb",
+          "black", -- python formatter
+          "pylint", -- python linter
         },
       })
     end,

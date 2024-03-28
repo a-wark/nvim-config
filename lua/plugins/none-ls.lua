@@ -8,12 +8,15 @@ return {
     local mason_null_ls = require("mason-null-ls")
     local null_ls = require("null-ls")
     local formatting = null_ls.builtins.formatting
+    local diagnostics = null_ls.builtins.diagnostics
 
     mason_null_ls.setup({
       ensure_installed = {
         "stylua",
         "prettier",
         "eslint_d",
+        "black", -- python formatter
+        "pylint", -- python linter
       },
     })
 
@@ -21,7 +24,13 @@ return {
       sources = {
         formatting.stylua,
         formatting.prettier,
-        require("none-ls.diagnostics.eslint_d"),
+        require("none-ls.diagnostics.eslint_d").with({
+          condition = function(utils)
+            return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if .eslintrc.js or .eslintrc.cjs exists
+          end,
+        }),
+        formatting.black,
+        diagnostics.pylint,
       },
     })
 
