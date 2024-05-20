@@ -21,6 +21,23 @@ return {
   --   end,
   -- },
 
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("cyberdream").setup({
+  --       -- Recommended - see "Configuring" below for more config options
+  --       transparent = true,
+  --       italic_comments = true,
+  --       hide_fillchars = true,
+  --       borderless_telescope = false,
+  --       terminal_colors = true,
+  --     })
+  --     vim.cmd("colorscheme cyberdream") -- set the colorscheme
+  --   end,
+  -- },
+
   {
     "cocopon/iceberg.vim",
     priority = 1000,
@@ -66,7 +83,7 @@ return {
       -- *.color15:      #d2d4de
     },
   },
-
+  --
   -- {
   --   "wadackel/vim-dogrun",
   --   config = function()
