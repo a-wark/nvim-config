@@ -4,6 +4,7 @@ return {
     dependencies = {
       {
         "williamboman/mason-lspconfig.nvim",
+        "nvim-neotest/nvim-nio",
       },
       {
         "rcarriga/nvim-dap-ui",
