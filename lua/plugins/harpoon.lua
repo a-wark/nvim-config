@@ -16,7 +16,7 @@ return {
 
     local keymap = vim.keymap
     keymap.set("n", "<leader>ha", function()
-      harpoon:list():append()
+      harpoon:list():add()
     end, { desc = "Mark file with harpoon" })
     keymap.set("n", "<leader>ht", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
