@@ -21,6 +21,15 @@ return {
   --   end,
   -- },
 
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nordic").load()
+    end,
+  },
+
   -- {
   --   "scottmckendry/cyberdream.nvim",
   --   lazy = false,
@@ -28,62 +37,68 @@ return {
   --   config = function()
   --     require("cyberdream").setup({
   --       -- Recommended - see "Configuring" below for more config options
-  --       transparent = true,
+  --       -- transparent = true,
   --       italic_comments = true,
   --       hide_fillchars = true,
   --       borderless_telescope = false,
   --       terminal_colors = true,
+  --       vim.api.nvim_set_keymap(
+  --         "n",
+  --         "<leader>cc",
+  --         ":CyberdreamToggleMode<CR>",
+  --         { desc = "toggle light/dark mode", noremap = true, silent = true }
+  --       ),
   --     })
   --     vim.cmd("colorscheme cyberdream") -- set the colorscheme
   --   end,
   -- },
 
-  {
-    "cocopon/iceberg.vim",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("iceberg")
-    end,
-    colors = {
-      -- ! special
-      -- *.foreground:   #c6c8d1
-      -- *.background:   #161821
-      -- *.cursorColor:  #c6c8d1
-      --
-      -- ! black
-      -- *.color0:       #1e2132
-      -- *.color8:       #6b7089
-      --
-      -- ! red
-      -- *.color1:       #e27878
-      -- *.color9:       #e98989
-      --
-      -- ! green
-      -- *.color2:       #b4be82
-      -- *.color10:      #c0ca8e
-      --
-      -- ! yellow
-      -- *.color3:       #e2a478
-      -- *.color11:      #e9b189
-      --
-      -- ! blue
-      -- *.color4:       #84a0c6
-      -- *.color12:      #91acd1
-      --
-      -- ! magenta
-      -- *.color5:       #a093c7
-      -- *.color13:      #ada0d3
-      --
-      -- ! cyan
-      -- *.color6:       #89b8c2
-      -- *.color14:      #95c4ce
-      --
-      -- ! white
-      -- *.color7:       #c6c8d1
-      -- *.color15:      #d2d4de
-    },
-  },
-  --
+  -- {
+  --   "cocopon/iceberg.vim",
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("iceberg")
+  --   end,
+  --   colors = {
+  --     -- ! special
+  --     -- *.foreground:   #c6c8d1
+  --     -- *.background:   #161821
+  --     -- *.cursorColor:  #c6c8d1
+  --     --
+  --     -- ! black
+  --     -- *.color0:       #1e2132
+  --     -- *.color8:       #6b7089
+  --     --
+  --     -- ! red
+  --     -- *.color1:       #e27878
+  --     -- *.color9:       #e98989
+  --     --
+  --     -- ! green
+  --     -- *.color2:       #b4be82
+  --     -- *.color10:      #c0ca8e
+  --     --
+  --     -- ! yellow
+  --     -- *.color3:       #e2a478
+  --     -- *.color11:      #e9b189
+  --     --
+  --     -- ! blue
+  --     -- *.color4:       #84a0c6
+  --     -- *.color12:      #91acd1
+  --     --
+  --     -- ! magenta
+  --     -- *.color5:       #a093c7
+  --     -- *.color13:      #ada0d3
+  --     --
+  --     -- ! cyan
+  --     -- *.color6:       #89b8c2
+  --     -- *.color14:      #95c4ce
+  --     --
+  --     -- ! white
+  --     -- *.color7:       #c6c8d1
+  --     -- *.color15:      #d2d4de
+  --   },
+  -- },
+
   -- {
   --   "wadackel/vim-dogrun",
   --   config = function()
