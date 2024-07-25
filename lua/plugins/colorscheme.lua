@@ -21,12 +21,23 @@ return {
   --   end,
   -- },
 
+  -- {
+  --   "AlexvZyl/nordic.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("nordic").load()
+  --   end,
+  -- },
+
   {
-    "AlexvZyl/nordic.nvim",
+    "0xstepit/flow.nvim",
     lazy = false,
     priority = 1000,
+    opts = {},
     config = function()
-      require("nordic").load()
+      require("flow").setup({})
+      vim.cmd.colorscheme("flow")
     end,
   },
 
